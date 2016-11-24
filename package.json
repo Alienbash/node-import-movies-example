@@ -1,0 +1,14 @@
+{
+  "name": "import-movies-node-example",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Import movies saved as json to a Graphcool project",
+  "dependencies": {
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1",
+    "moment": "^2.17.0"
+  },
+  "scripts": {
+    "start": "node --harmony-async-await import-movies.js"
+  }
+}
