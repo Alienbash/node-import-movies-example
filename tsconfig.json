@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "lib": ["es2015"]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

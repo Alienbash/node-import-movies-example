@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const {Lokka} = require('lokka')
-const {Transport} = require('lokka-transport-http')
+import { Lokka } from 'lokka'
+import * as _ from 'lodash'
+import { Transport } from 'lokka-transport-http'
 
 // set timezone to UTC (needed for Graphcool)
 process.env.TZ = 'UTC'
@@ -10,9 +10,28 @@ const client = new Lokka({
 })
 
 // convert to ISO 8601 format
-const convertToDateTimeString = (str) => new Date(Date.parse(str)).toISOString()
+const convertToDateTimeString = (str: string): string => new Date(Date.parse(str)).toISOString()
 
-const createMovie = async(movie) => {
+interface Movie {
+  id: string
+  title: string
+  description: string
+  released: string
+}
+
+interface Actor {
+  id: string
+  birthday: string
+  name: string
+  gender: string
+}
+
+// maps from old imported id (data set) to new generated id (Graphcool)
+interface IdMap {
+  [key: string]: string
+}
+
+const createMovie = async (movie: Movie): Promise<string> => {
   const result = await client.mutate(`{
     movie: createMovie(
       oldId: "${movie.id}"
@@ -27,7 +46,7 @@ const createMovie = async(movie) => {
   return result.movie.id
 }
 
-const createActor = async(actor) => {
+const createActor = async (actor: Actor): Promise<string> => {
   const result = await client.mutate(`{
     actor: createActor(
       oldId: "${actor.id}"
@@ -42,20 +61,19 @@ const createActor = async(actor) => {
   return result.actor.id
 }
 
-// maps from old imported id (data set) to new generated id (Graphcool)
-const createMovies = async(rawMovies) => {
+const createMovies = async (rawMovies: Movie[]): Promise<IdMap> => {
   const movieIds = await Promise.all(rawMovies.map(createMovie))
 
-  return _.zipObject(rawMovies.map(movie => movie.id), movieIds)
+  return _.zipObject<IdMap>(rawMovies.map(movie => movie.id), movieIds)
 }
 
-const createActors = async(rawActors) => {
+const createActors = async (rawActors: Actor[]): Promise<IdMap> => {
   const actorIds = await Promise.all(rawActors.map(createActor))
 
-  return _.zipObject(rawActors.map(actor => actor.id), actorIds)
+  return _.zipObject<IdMap>(rawActors.map(actor => actor.id), actorIds)
 }
 
-const connectMoviesAndActorsMutation = (actorId, movieId) => (
+const connectMoviesAndActorsMutation = (actorId: string, movieId: string): Promise<any> => (
   client.mutate(`{
     addToActorMovies(actorsActorId: "${actorId}" moviesMovieId: "${movieId}") {
       # we don't need this but we need to return something
