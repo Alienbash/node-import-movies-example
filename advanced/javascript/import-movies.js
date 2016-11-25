@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const _ = require('lodash')
 const {Lokka} = require('lokka')
 const {Transport} = require('lokka-transport-http')
 

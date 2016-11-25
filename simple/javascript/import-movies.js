@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const {Lokka} = require('lokka')
 const {Transport} = require('lokka-transport-http')
 
@@ -27,7 +26,6 @@ const createMovie = async(movie) => {
   return result.movie.id
 }
 
-// maps from old imported id (data set) to new generated id (Graphcool)
 const createMovies = async(rawMovies) => {
   return await Promise.all(rawMovies.map(createMovie))
 }
