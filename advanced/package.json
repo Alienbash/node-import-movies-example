@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.40",
-    "typescript": "rc"
+    "@types/node": "^6.0.51",
+    "typescript": "^2.2.0-dev.20161125"
   }
 }
