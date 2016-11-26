@@ -67,7 +67,7 @@ const connectMoviesAndActorsMutation = (actorId, movieId) => (
 )
 
 const main = async() => {
-  const rawMovies = require('../movies.json')
+  const rawMovies = require('./movies.json')
 
   const allActors = _.chain(rawMovies)
     .flatMap(rawMovie => rawMovie.actors)

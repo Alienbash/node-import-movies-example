@@ -3,7 +3,7 @@
     "preserveConstEnums": true,
     "strictNullChecks": true,
     "target": "es5",
-    "outDir": "lib",
+    "outDir": ".",
     "moduleResolution": "node",
     "lib": ["es2015"]
   },

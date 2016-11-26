@@ -6,7 +6,7 @@ import { Transport } from 'lokka-transport-http'
 process.env.TZ = 'UTC'
 
 const client = new Lokka({
-  transport: new Transport('https://api.graph.cool/simple/v1/__PROJECT_ID__')
+  transport: new Transport('https://api.graph.cool/simple/v1/civw78ofz1o81019157nfj1yb')
 })
 
 // convert to ISO 8601 format
@@ -85,7 +85,7 @@ const connectMoviesAndActorsMutation = (actorId: string, movieId: string): Promi
 )
 
 const main = async() => {
-  const rawMovies = require('../movies.json')
+  const rawMovies = require('./movies.json')
 
   const allActors = _.chain(rawMovies)
     .flatMap(rawMovie => rawMovie.actors)
