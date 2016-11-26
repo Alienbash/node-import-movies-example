@@ -31,7 +31,7 @@ const createMovies = async(rawMovies) => {
 }
 
 const main = async() => {
-  const rawMovies = require('../movies.json')
+  const rawMovies = require('./movies.json')
 
   // create movies
   const movieIds = await createMovies(rawMovies)
