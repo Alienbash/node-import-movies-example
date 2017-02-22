@@ -1,6 +1,6 @@
 # Advanced data import
 
-An example for importing complex JSON data to Graphcool. There is also a [full guide](https://graph.cool/docs/guides/importing-complex-data-using-a-script).
+An example for importing complex JSON data to Graphcool. There is also a [full guide](https://www.graph.cool/docs/tutorials/importing-complex-data-aing2chaih).
 
 ## Getting started
 
