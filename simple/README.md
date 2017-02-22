@@ -1,6 +1,6 @@
 # Simple data import
 
-An example for importing simple JSON data to Graphcool. There is also a [full guide](https://graph.cool/docs/guides/importing-simple-data-using-a-script).
+An example for importing simple JSON data to Graphcool. There is also a [full guide](https://www.graph.cool/docs/tutorials/importing-simple-data-ga2ahnee2a/).
 
 ## Getting started
 
@@ -23,7 +23,7 @@ type Movie {
 
 ### 2. Configure app data endpoint
 
-Open `import-movies-actors.js` and paste your `PROJECT_ID` to the following line:
+Open `import-movies.js` and paste your `PROJECT_ID` to the following line:
 
 ```js
 const client = new Lokka({
@@ -39,10 +39,10 @@ You're done configuring the example application. To run the script, make sure yo
 node -v
 ```
 
-Then you can execute `import-movies-actors.js` with the `--harmony-async-await` parameter to enabled `async` and `await`:
+Then you can execute `import-movies.js` with the `--harmony-async-await` parameter to enabled `async` and `await`:
 
 ```sh
-node --harmony-async-await import-movies-actors.js
+node --harmony-async-await import-movies.js
 ```
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
