@@ -5,12 +5,12 @@ This repository is a collection of different import scripts for importing JSON d
 ## Simple data import
 
 An example for importing simple JSON data can be found in the `simple` folder.
-There is also a [full guide](https://graph.cool/docs/guides/importing-simple-data-using-a-script).
+There is also a [full guide](https://www.graph.cool/docs/faq/importing-simple-data-ga2ahnee2a/).
 
 ## Complex data import
 
 An example for importing more complex JSON data can be found in the `advanced-javascript` and `advanced-typescript` folders.
-There is also a [full guide](https://graph.cool/docs/guides/importing-complex-data-using-a-script).
+There is also a [full guide](https://www.graph.cool/docs/faq/importing-complex-data-aing2chaih/).
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
