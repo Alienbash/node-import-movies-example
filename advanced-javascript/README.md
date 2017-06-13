@@ -13,20 +13,26 @@ To run this example, please create a [Graphcool](http://graph.cool) account and 
 This is how our GraphQL data model looks like:
 
 ```graphql
-type Movie {
-  actors: [Actor]
+type Movie implements Node {
+  actors: [Actor!]! @relation(name: "ActorMovies")
   description: String!
   oldId: String!
   released: DateTime!
   title: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
 }
 
-type Actor {
+type Actor implements Node {
   birthday: DateTime!
   gender: String!
-  movies: [Movie]
+  movies: [Movie!]! @relation(name: "ActorMovies")
   name: String!
   oldId: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
 }
 ```
 
